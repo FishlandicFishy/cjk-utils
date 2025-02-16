@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Display Test</title>
+    <style>
+        @font-face {
+          font-family: "Pretendard";
+          src:
+            local("Pretendard"),
+            url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardStdVariable.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Last Resort";
+          src:
+            local("Last Resort"),
+            url("LastResortHE-Regular.ttf") format("ttf"),
+            url("LastResort-Regular.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Noto Sans KR";
+          src:
+            local("Noto Sans KR"),
+            local("Source Han Sans KR"),
+            url("SHS-KR.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Noto Sans JP";
+          src:
+            local("Noto Sans JP"),
+            local("Source Han Sans JP"),
+            url("SHS-JP.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Noto Sans HK";
+          src:
+            local("Noto Sans HK"),
+            local("Source Han Sans HK"),
+            url("SHS-HK.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Noto Sans TC";
+          src:
+            local("Noto Sans TC"),
+            local("Source Han Sans TC"),
+            url("SHS-TC.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Noto Sans SC";
+          src:
+            local("Noto Sans SC"),
+            local("Source Han Sans SC"),
+            url("SHS-SC.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Chocolate Classical Sans";
+          src:
+            local("Chocolate Classical Sans"),
+            url("ChocolateClassicalSans.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Sukima Gothic";
+          src:
+            local("Sukima Gothic"),
+            url("SukimaGothic.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Gothic Nguyen";
+          src:
+            local("Gothic Nguyen"),
+            url("GothicNguyen.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Chiron Hei HK";
+          src:
+            local("Chiron Hei HK"),
+            url("ChironHei.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "WenYuan Gothic";
+          src:
+            local("WenYuan Gothic"),
+            url("WenYuanGothic.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Yshi-YuanGothic";
+          src:
+            local("Yshi-YuanGothic"),
+            url("YshiYuanGothic.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "ChiuKong Gothic";
+          src:
+            local("ChiuKong Gothic"),
+            url("ChiuKongGothic.otf") format("otf");
+        }
+        @font-face {
+          font-family: "Shanggu Sans TC";
+          src:
+            local("Shanggu Sans TC"),
+            url("ShangguSans.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Genne Gothic";
+          src:
+            local("Genne Gothic"),
+            url("GenneGothic.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Plangothic P1";
+          src:
+            local("Plangothic P1"),
+            url("PlangothicP1.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "Plangothic P2";
+          src:
+            local("Plangothic P2"),
+            url("PlangothicP2.ttf") format("ttf");
+        }
+        @font-face {
+          font-family: "ScriptwideSansCJK-A";
+          src:
+            local("ScriptwideSansCJK-A"),
+            url("ScrA.woff") format("woff");
+        }
+        @font-face {
+          font-family: "ScriptwideSansCJK-B";
+          src:
+            local("ScriptwideSansCJK-B"),
+            url("ScrB.woff") format("woff");
+        }
+        @font-face {
+          font-family: "ScriptwideSansCJK-C";
+          src:
+            local("ScriptwideSansCJK-C"),
+            url("ScrC.woff") format("woff");
+        }
+
+
+        body {
+            font-family: Pretendard, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 100%;
+            font-size: 32px;
+        }
+        .uniInput {
+            width: 15%;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .font-display {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            font-size: 32px;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 5px; /* Space between input and button */
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <input type="text" id="textInput" placeholder="Type something..." style="font-family:'ScriptwideSansCJK-A','ScriptwideSansCJK-B','ScriptwideSansCJK-C'"/>
+        <div class="uniInput">
+          <input type="text" id="unicodeInput" placeholder="4e00" style="font-family:monospace;" />
+        </div>
+        <button id="addCharButton" style="font-family:Inter;">Add Character</button>
+    </div>
+    <div class="font-display" style="font-family: 'Noto Sans JP','Noto Sans KR','Noto Sans HK','Noto Sans TC', 'Noto Sans CJK SC','Last Resort';">
+        [J|K|H|T|G] SHS | <span id="fontSHS"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Chocolate Classical Sans','Last Resort';">
+        [I] Chocolate CL | <span id="fontChoc"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Sukima Gothic','Last Resort';">
+        [J] Sukima Gothic | <span id="fontSukima"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Gothic Nguyen','Last Resort';">
+        [K] Gothic Nguyen | <span id="fontNguyen"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Chiron Hei HK','Last Resort';">
+        [H*] Chiron Hei HK | <span id="fontChiron"></span>
+    </div>
+    <div class="font-display" style="font-family: 'WenYuan Gothic','Last Resort';">
+        [G] WenYuan Gothic | <span id="fontWenY"></span>
+    </div>
+    <div class="font-display" style="font-family: Yshi-YuanGothic,'Last Resort';">
+        [I] Yuu-Gothic | <span id="fontYshi"></span>
+    </div>
+    <div class="font-display" style="font-family: ChiuKong Gothic MN,'Last Resort';">
+        [I] ChiuKong Gothic | <span id="fontChiu"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Shanggu Sans TC','Last Resort';">
+        [I] Shanggu Sans | <span id="fontShang"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Genne Gothic','Last Resort';">
+        [I] Genne Gothic | <span id="fontGenne"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Plangothic P1', 'Plangothic P2','Noto Sans CJK SC','Last Resort';">
+        [G] Plangοthic | <span id="fontPlan"></span>
+    </div>
+    <div class="font-display" style="font-family: 'ScriptwideSansCJK-A', 'ScriptwideSansCJK-B','ScriptwideSansCJK-C','Last Resort';">
+        [K*|G*] Scriptwide Sans | <span id="fontScrw"></span>
+    </div>
+    <hr>
+    <p>This page is in the public domain. All fonts used are licensed under the OFL.</p>
+    <p><a href="https://github.com/orioncactus/pretendard">Pretendard (body font)</a> | <a href="https://github.com/unicode-org/last-resort-font">Last Resort (fallback font)</a> | <a href="https://github.com/adobe-fonts/source-han-sans">Source Han Sans</a> | <a href="https://github.com/MoonlitOwen/ChocolateSans">Chocolate Classical Sans</a> | <a href="https://booth.pm/ja/items/2117070">Sukima Gothic</a> | <a href="https://github.com/TKYKmori/Gothic-Nguyen">Gothic Nguyen</a> | <a href="https://chiron-fonts.github.io/">Chiron Hei HK</a> | <a href="https://github.com/takushun-wu/WenYuanFonts">WenYuan Gothic</a> | <a href="https://github.com/Steve-Yuu/Yuu-Gothic">Yuu-Gothic</a> | <a href="https://github.com/ChiuMing-Neko/ChiuKongGothic">ChiuKong Gothic</a> | <a href="https://github.com/GuiWonder/Shanggu">Shanggu Sans</a> | <a href="https://github.com/MoneMizuno/Genne-Gothic">Genne Gothic</a> | <a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project">Plangothic</a> | <a href="https://github.com/scriptwide-fonts/scriptwide-sans-cjk">Scriptwide Sans</a></p>
+    <script>
+        const textInput = document.getElementById('textInput');
+        const unicodeInput = document.getElementById('unicodeInput');
+        const addCharButton = document.getElementById('addCharButton');
+        
+        const fontSHS = document.getElementById('fontSHS');
+        const fontChoc = document.getElementById('fontChoc');
+        const fontSukima = document.getElementById('fontSukima');
+        const fontNguyen = document.getElementById('fontNguyen');
+        const fontChiron = document.getElementById('fontChiron');
+        const fontWenY = document.getElementById('fontWenY');
+        const fontYshi = document.getElementById('fontYshi');
+        const fontChiu = document.getElementById('fontChiu');
+        const fontShang = document.getElementById('fontShang');
+        const fontGenne = document.getElementById('fontGenne');
+        const fontPlan = document.getElementById('fontPlan');
+        const fontScrw = document.getElementById('fontScrw');
+
+        textInput.addEventListener('input', updateFonts);
+        addCharButton.addEventListener('click', appendUnicodeChar);
+        
+        function updateFonts() {
+            const inputText = textInput.value;
+            fontSHS.textContent = inputText;
+            fontChoc.textContent = inputText;
+            fontSukima.textContent = inputText;
+            fontNguyen.textContent = inputText;
+            fontChiron.textContent = inputText;
+            fontWenY.textContent = inputText;
+            fontYshi.textContent = inputText;
+            fontChiu.textContent = inputText;
+            fontShang.textContent = inputText;
+            fontGenne.textContent = inputText;
+            fontPlan.textContent = inputText;
+            fontScrw.textContent = inputText;
+        }
+        
+        function appendUnicodeChar() {
+            const hexCode = unicodeInput.value.trim();
+            if (hexCode.match(/^[0-9A-Fa-f]{1,6}$/)) {
+                const char = String.fromCodePoint(parseInt(hexCode, 16));
+                textInput.value += char;
+                updateFonts();
+                unicodeInput.value = ''; // Clear the input after adding
+            } else {
+                alert('Please enter a valid hexadecimal codepoint (e.g. 4e00).');
+            }
+        }
+    </script>
+
+</body>
+</html>
