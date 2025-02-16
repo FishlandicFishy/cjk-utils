@@ -1,4 +1,6 @@
 # cjk-utils
- Utilities assisting in CJK font creation
+ Utilities assisting in CJK font creation.
 
- Note that attached fonts are NOT in the public domain but licensed under the OFL.
+The website is licensed under CC0.
+
+Note that attached fonts are NOT in the public domain but licensed under the OFL.
