@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Display Test</title>
+    <style>
+        @font-face {
+          font-family: "Pretendard";
+          src:
+            local("Pretendard"),
+            url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardStdVariable.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Last Resort";
+          src:
+            local("Last Resort"),
+            url("LastResortHE-Regular.ttf") format("ttf"),
+            url("LastResort-Regular.ttf") format("ttf");
+        }
+
+        body {
+            font-family: Pretendard, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 100%;
+            font-size: 32px;
+        }
+        .uniInput {
+            width: 15%;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .font-display {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            font-size: 32px;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 5px; /* Space between input and button */
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <input type="text" id="textInput" placeholder="Type something..." style="font-family:'Klee One Semibold','LXGW WenKai TC','LXGW WenKai','Plan Kai A JP','Plan Kai B JP','Plan Kai G JP','Iansui','JyunsaiKaai','WenKai_MSARG','LXGW WenKai GB'"/>
+        <div class="uniInput">
+          <input type="text" id="unicodeInput" placeholder="4e00" style="font-family:monospace;" />
+        </div>
+        <button id="addCharButton" style="font-family:Inter;">Add Character</button>
+    </div>
+    <div class="font-display" style="font-family: 'Klee One SemiBold','Last Resort';">
+        [J] Klee One | <span id="fontKlee"></span>
+    </div>
+    <div class="font-display" style="font-family: 'LXGW WenKai','Last Resort';">
+        [J|G] LXGW WenKai | <span id="fontW"></span>
+    </div>
+    <div class="font-display" style="font-family: 'LXGW WenKai TC','Last Resort';">
+        [I] LXGW WenKai TC | <span id="fontWt"></span>
+    </div>
+    <div class="font-display" style="font-family: 'YShiNewPen-Shuti','Last Resort';">
+        [I] YShiNewPen-Shuti | <span id="fontYs"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Moon Stars Kai','Last Resort';">
+        [I] Moon Stars Kai | <span id="fontMs"></span>
+    </div>
+    <div class="font-display" style="font-family: 'WenKai_MSARG','Last Resort';">
+        [M] WenKai_MSARG | <span id="fontWm"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Iansui','Last Resort';">
+        [I] Iansui | <span id="fontIa"></span>
+    </div>
+    <div class="font-display" style="font-family: 'JyunsaiKaai','Last Resort';">
+        [H] JyunsaiKaai | <span id="fontJy"></span>
+    </div>
+    <div class="font-display" style="font-family: 'LXGW WenKai GB','Last Resort';">
+        [I] LXGW WenKai GB | <span id="fontWg"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Plan Kai A JP','Plan Kai B JP','Plan Kai G JP','Klee One SemiBold','LXGW WenKai TC','LXGW WenKai','Last Resort';">
+        [J] PlanKai JP | <span id="fontPj"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Plan Kai A SC','Plan Kai B SC','Plan Kai G SC','LXGW WenKai GB','Last Resort';">
+        [G] PlanKai SC | <span id="fontPg"></span>
+    </div>
+    <hr>
+    <p>This page is in the public domain. All fonts used are licensed under the OFL. See <a href="https://github.com/FishlandicFishy/cjk-utils">the GitHub repository</a>.</p>
+    <p><a href="https://github.com/orioncactus/pretendard">Pretendard (body font)</a> | <a href="https://github.com/unicode-org/last-resort-font">Last Resort (fallback font)</a> | <a href="https://fonts.google.com/specimen/Klee+One">Klee One</a> | <a href="https://github.com/lxgw/LxgwWenKai">LXGW WenKai</a> (<a href="https://github.com/lxgw/LxgwWenkaiTC">TC</a>, <a href="https://github.com/lxgw/LxgwWenkaiGB">GB</a>) | <a href="https://github.com/Steve-Yuu/YshiPen-Shuti">YshiPen-Shuti</a> | <a href="https://github.com/GuiWonder/MoonStarsKai">Moon Stars Kai</a> | <a href="https://github.com/buwuzhengyedexiaoji/WenKai_MSARG">WenKai_MSARG</a> | <a href="https://github.com/ButTaiwan/iansui">Iansui</a> | <a href="https://github.com/ItMarki/jyunsaikaai">JyunsaiKaai</a> | <a href="https://github.com/Des-Magmeta/PlanKai">PlanKai</a></p>
+    <script>
+        const textInput = document.getElementById('textInput');
+        const unicodeInput = document.getElementById('unicodeInput');
+        const addCharButton = document.getElementById('addCharButton');
+        
+        const fontKlee = document.getElementById('fontKlee');
+        const fontW = document.getElementById('fontW');
+        const fontWt = document.getElementById('fontWt');
+        const fontWg = document.getElementById('fontWg');
+        const fontWm = document.getElementById('fontWm');
+        const fontYs = document.getElementById('fontYs');
+        const fontMs = document.getElementById('fontMs');
+        const fontIa = document.getElementById('fontIa');
+        const fontHy = document.getElementById('fontJy');
+        const fontPj = document.getElementById('fontPj');
+        const fontPg = document.getElementById('fontPg');
+
+        textInput.addEventListener('input', updateFonts);
+        addCharButton.addEventListener('click', appendUnicodeChar);
+        
+        function updateFonts() {
+            const inputText = textInput.value;
+            fontKlee.textContent = inputText;
+            fontW.textContent = inputText;
+            fontWt.textContent = inputText;
+            fontWg.textContent = inputText;
+            fontWm.textContent = inputText;
+            fontMs.textContent = inputText;
+            fontYs.textContent = inputText;
+            fontIa.textContent = inputText;
+            fontJy.textContent = inputText;
+            fontPj.textContent = inputText;
+            fontPg.textContent = inputText;
+        }
+        
+        function appendUnicodeChar() {
+            const hexCode = unicodeInput.value.trim();
+            if (hexCode.match(/^[0-9A-Fa-f]{1,6}$/)) {
+                const char = String.fromCodePoint(parseInt(hexCode, 16));
+                textInput.value += char;
+                updateFonts();
+                unicodeInput.value = ''; // Clear the input after adding
+            } else {
+                alert('Please enter a valid hexadecimal codepoint (e.g. 4e00).');
+            }
+        }
+    </script>
+
+</body>
+</html>
