@@ -94,9 +94,12 @@
     <div class="font-display" style="font-family: 'Plan Kai A SC','Plan Kai B SC','Plan Kai G SC','Last Resort';">
         [G] PlanKai SC | <span id="fontPg"></span>
     </div>
+    <div class="font-display" style="font-family: 'ScriptwideKyokashoCJK-A','ScriptwideKyokashoCJK-B','Last Resort';">
+        [C] Scriptwide Kyokasho CJK | <span id="fontSc"></span>
+    </div>
     <hr>
     <p>This page is in the public domain. All fonts used are licensed under the OFL. See <a href="https://github.com/FishlandicFishy/cjk-utils">the GitHub repository</a>.</p>
-    <p><a href="https://github.com/orioncactus/pretendard">Pretendard (body font)</a> | <a href="https://github.com/unicode-org/last-resort-font">Last Resort (fallback font)</a> | <a href="https://fonts.google.com/specimen/Klee+One">Klee One</a> | <a href="https://github.com/lxgw/LxgwWenKai">LXGW WenKai</a> (<a href="https://github.com/lxgw/LxgwWenkaiTC">TC</a>, <a href="https://github.com/lxgw/LxgwWenkaiGB">GB</a>) | <a href="https://github.com/Steve-Yuu/YshiPen-Shuti">YshiPen-Shuti</a> | <a href="https://github.com/GuiWonder/MoonStarsKai">Moon Stars Kai</a> | <a href="https://github.com/buwuzhengyedexiaoji/WenKai_MSARG">WenKai_MSARG</a> | <a href="https://github.com/ButTaiwan/iansui">Iansui</a> | <a href="https://github.com/ItMarki/jyunsaikaai">JyunsaiKaai</a> | <a href="https://github.com/Des-Magmeta/PlanKai">PlanKai</a></p>
+    <p><a href="https://github.com/orioncactus/pretendard">Pretendard (body font)</a> | <a href="https://github.com/unicode-org/last-resort-font">Last Resort (fallback font)</a> | <a href="https://fonts.google.com/specimen/Klee+One">Klee One</a> | <a href="https://github.com/lxgw/LxgwWenKai">LXGW WenKai</a> (<a href="https://github.com/lxgw/LxgwWenkaiTC">TC</a>, <a href="https://github.com/lxgw/LxgwWenkaiGB">GB</a>) | <a href="https://github.com/Steve-Yuu/YshiPen-Shuti">YshiPen-Shuti</a> | <a href="https://github.com/GuiWonder/MoonStarsKai">Moon Stars Kai</a> | <a href="https://github.com/buwuzhengyedexiaoji/WenKai_MSARG">WenKai_MSARG</a> | <a href="https://github.com/ButTaiwan/iansui">Iansui</a> | <a href="https://github.com/ItMarki/jyunsaikaai">JyunsaiKaai</a> | <a href="https://github.com/Des-Magmeta/PlanKai">PlanKai</a> | <a href="https://github.com/scriptwide-fonts/scriptwide-kyokasho-cjk">Scriptwide Kyokasho CJK</a></p>
     <script>
         const textInput = document.getElementById('textInput');
         const unicodeInput = document.getElementById('unicodeInput');
@@ -113,6 +116,7 @@
         const fontHy = document.getElementById('fontJy');
         const fontPj = document.getElementById('fontPj');
         const fontPg = document.getElementById('fontPg');
+        const fontSc = document.getElementById('fontSc');
 
         textInput.addEventListener('input', updateFonts);
         addCharButton.addEventListener('click', appendUnicodeChar);
@@ -130,6 +134,7 @@
             fontJy.textContent = inputText;
             fontPj.textContent = inputText;
             fontPg.textContent = inputText;
+            fontSc.textContent = inputText;
         }
         
         function appendUnicodeChar() {
