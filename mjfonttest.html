@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Display Test</title>
+    <style>
+        @font-face {
+          font-family: "Pretendard";
+          src:
+            local("Pretendard"),
+            url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardStdVariable.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Last Resort";
+          src:
+            local("Last Resort"),
+            url("LastResortHE-Regular.ttf") format("ttf"),
+            url("LastResort-Regular.ttf") format("ttf");
+        }
+
+        body {
+            font-family: Pretendard, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 100%;
+            font-size: 32px;
+        }
+        .uniInput {
+            width: 15%;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .font-display {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            font-size: 32px;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 5px; /* Space between input and button */
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <input type="text" id="textInput" placeholder="Type something..." style="font-family:'IPAmjMincho','LXGW ZhiSong MN', 'YshiMincho CL', 'I.Ming', 'LXGW Neo ZhiSong Plus'"/>
+        <div class="uniInput">
+          <input type="text" id="unicodeInput" placeholder="4e00" style="font-family:monospace;" />
+        </div>
+        <button id="addCharButton" style="font-family:Inter;">Add Character</button>
+    </div>
+    <div class="font-display" style="font-family: 'IPAmjMincho','Last Resort';">
+        [J] IPAmjMincho | <span id="fontMj"></span>
+    </div>
+    <div class="font-display" style="font-family: 'LXGW ZhiSong MN','Last Resort';">
+        [I] LXGW ZhiSong MN | <span id="fontLX"></span>
+    </div>
+    <div class="font-display" style="font-family: 'YshiMincho CL','Last Resort';">
+        [I] YshiMincho CL | <span id="fontYs"></span>
+    </div>
+    <div class="font-display" style="font-family: 'I.Ming','Last Resort';">
+        [I] I.Ming | <span id="fontIm"></span>
+    </div>
+    <div class="font-display" style="font-family: 'LXGW Neo ZhiSong Plus','Last Resort';">
+        [G] LXGW Neo ZhiSong | <span id="fontLN"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Mizuki-Ming','Last Resort';">
+        [I] Mizuki Ming | <span id="fontMi"></span>
+    </div>
+    <div class="font-display" style="font-family: '致一宋體','Last Resort';">
+        [I] Zhiyi Serif | <span id="fontZy"></span>
+    </div>
+    <div class="font-display" style="font-family: 'HuayingMincho Classic','Last Resort';">
+        [I] Huaying Mincho Classic | <span id="fontHC"></span>
+    </div>
+    <div class="font-display" style="font-family: 'HuayingMincho ODict','Last Resort';">
+        [I] Huaying Mincho ODict | <span id="fontHD"></span>
+    </div>
+    <div class="font-display" style="font-family: 'HuayingMincho Old','Last Resort';">
+        [I] Huaying Mincho Old | <span id="fontHO"></span>
+    </div>
+    <div class="font-display" style="font-family: 'HuayingMincho T','Last Resort';">
+        [I] Huaying Mincho T | <span id="fontHT"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Study Ming JP','Last Resort';">
+        [J] Study Ming JP | <span id="fontSj"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Study Ming JA','Last Resort';">
+        [A] Study Ming JA | <span id="fontSa"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Study Ming HK','Last Resort';">
+        [H] Study Ming HK | <span id="fontSh"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Study Ming TW','Last Resort';">
+        [T] Study Ming TW | <span id="fontSt"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Study Ming CN','Last Resort';">
+        [G] Study Ming CN | <span id="fontSg"></span>
+    </div>
+    <hr>
+    <p>This page is in the public domain. Pretendard and Last Resort are licensed under the OFL. All other fonts are licensed under the IPA font license. See <a href="https://github.com/FishlandicFishy/cjk-utils">the GitHub repository</a>.</p>
+    <p><a href="https://github.com/orioncactus/pretendard">Pretendard (body font)</a> | <a href="https://github.com/unicode-org/last-resort-font">Last Resort (fallback font)</a> | <a href="https://moji.or.jp/mojikiban/font/">IPAmjMincho</a> | <a href="https://github.com/lxgw/LxgwZhiSong">LXGW ZhiSong</a> | <a href="https://github.com/lxgw/LxgwNeoZhiSong">LXGW Neo ZhiSong</a> | <a href="https://github.com/Steve-Yuu/YShiMincho">YShiMincho</a> | <a href="https://github.com/ichitenfont/I.Ming">I.Ming</a> | <a href="https://github.com/MEE-Developers/Mizuki-Ming">Mizuki Ming</a> | <a href="https://github.com/RiyipuSipino/ZhiyiSerif">Zhiyi Serif | <a href="https://github.com/GuiWonder/HuayingMincho">Huaying Mincho</a> | <a href="https://github.com/project-ccs/font">Study Ming</a></p>
+    <script>
+        const textInput = document.getElementById('textInput');
+        const unicodeInput = document.getElementById('unicodeInput');
+        const addCharButton = document.getElementById('addCharButton');
+        
+        const fontMj = document.getElementById('fontMj');
+        const fontLX = document.getElementById('fontLX');
+        const fontYs = document.getElementById('fontYs');
+        const fontIm = document.getElementById('fontIm');
+        const fontLN = document.getElementById('fontLN');
+        const fontMi = document.getElementById('fontMi');
+        const fontZy = document.getElementById('fontZy');
+        const fontHC = document.getElementById('fontHC');
+        const fontHD = document.getElementById('fontHD');
+        const fontHO = document.getElementById('fontHO');
+        const fontHT = document.getElementById('fontHT');
+        const fontSj = document.getElementById('fontSj');
+        const fontSa = document.getElementById('fontSa');
+        const fontSh = document.getElementById('fontSh');
+        const fontSt = document.getElementById('fontSt');
+        const fontSg = document.getElementById('fontSg');
+
+        textInput.addEventListener('input', updateFonts);
+        addCharButton.addEventListener('click', appendUnicodeChar);
+        
+        function updateFonts() {
+            const inputText = textInput.value;
+            fontMj.textContent = inputText;
+            fontLX.textContent = inputText;
+            fontYs.textContent = inputText;
+            fontIm.textContent = inputText;
+            fontLN.textContent = inputText;
+            fontMi.textContent = inputText;
+            fontZy.textContent = inputText;
+            fontHC.textContent = inputText;
+            fontHD.textContent = inputText;
+            fontHO.textContent = inputText;
+            fontHT.textContent = inputText;
+            fontSj.textContent = inputText;
+            fontSa.textContent = inputText;
+            fontSh.textContent = inputText;
+            fontSt.textContent = inputText;
+            fontSg.textContent = inputText;
+        }
+        
+        function appendUnicodeChar() {
+            const hexCode = unicodeInput.value.trim();
+            if (hexCode.match(/^[0-9A-Fa-f]{1,6}$/)) {
+                const char = String.fromCodePoint(parseInt(hexCode, 16));
+                textInput.value += char;
+                updateFonts();
+                unicodeInput.value = ''; // Clear the input after adding
+            } else {
+                alert('Please enter a valid hexadecimal codepoint (e.g. 4e00).');
+            }
+        }
+    </script>
+
+</body>
+</html>
