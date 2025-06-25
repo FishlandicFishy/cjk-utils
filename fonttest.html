@@ -61,8 +61,20 @@
         </div>
         <button id="addCharButton" style="font-family:Inter;">Add Character</button>
     </div>
-    <div class="font-display" style="font-family: 'Noto Sans JP','Noto Sans KR','Noto Sans HK','Noto Sans TC', 'Noto Sans CJK SC','Last Resort';">
-        [J|K|H|T|G] SHS | <span id="fontSHS"></span>
+    <div class="font-display" style="font-family: 'Source Han Sans KR', 'Noto Sans KR', 'Noto Sans CJK KR', 'Last Resort';">
+        [K] SHS KR | <span id="fontSK"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Source Han Sans JP', 'Noto Sans JP', 'Noto Sans CJK JP', 'Last Resort';">
+        [J] SHS JP | <span id="fontSJ"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Source Han Sans HK', 'Noto Sans HK', 'Noto Sans CJK HK', 'Last Resort';">
+        [H] SHS HK | <span id="fontSH"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Source Han Sans TW', 'Noto Sans TC', 'Noto Sans CJK TC', 'Last Resort';">
+        [T] SHS TW | <span id="fontST"></span>
+    </div>
+    <div class="font-display" style="font-family: 'Source Han Sans CN', 'Noto Sans SC', 'Noto Sans CJK SC', 'Last Resort';">
+        [G] SHS CN | <span id="fontSG"></span>
     </div>
     <div class="font-display" style="font-family: 'Chocolate Classical Sans','Last Resort';">
         [I] Chocolate CL | <span id="fontChoc"></span>
@@ -105,7 +117,11 @@
         const unicodeInput = document.getElementById('unicodeInput');
         const addCharButton = document.getElementById('addCharButton');
         
-        const fontSHS = document.getElementById('fontSHS');
+        const fontSK = document.getElementById('fontSK');
+        const fontSJ = document.getElementById('fontSJ');
+        const fontSH = document.getElementById('fontSH');
+        const fontST = document.getElementById('fontST');
+        const fontSC = document.getElementById('fontSC');
         const fontChoc = document.getElementById('fontChoc');
         const fontSukima = document.getElementById('fontSukima');
         const fontNguyen = document.getElementById('fontNguyen');
@@ -123,7 +139,11 @@
         
         function updateFonts() {
             const inputText = textInput.value;
-            fontSHS.textContent = inputText;
+            fontSK.textContent = inputText;
+            fontSJ.textContent = inputText;
+            fontSH.textContent = inputText;
+            fontST.textContent = inputText;
+            fontSC.textContent = inputText;
             fontChoc.textContent = inputText;
             fontSukima.textContent = inputText;
             fontNguyen.textContent = inputText;
