@@ -79,6 +79,15 @@
     <div class="font-display" style="font-family: 'Chocolate Classical Sans','Last Resort';">
         [I] Chocolate CL | <span id="fontChoc"></span>
     </div>
+    <div class="font-display" style="font-family: 'GenYoGothic2 TC','Last Resort';">
+        [I] GenYoGothic TC | <span id="fontGenYoTC"></span>
+    </div>
+    <div class="font-display" style="font-family: 'GenYoGothic2 TW','Last Resort';">
+        [I] GenYoGothic TW | <span id="fontGenYoTW"></span>
+    </div>
+    <div class="font-display" style="font-family: 'GenYoGothic2 JP','Last Resort';">
+        [J] GenYoGothic JP | <span id="fontGenYoJP"></span>
+    </div>
     <div class="font-display" style="font-family: 'Sukima Gothic','Sukima Gothic SUB','Last Resort';">
         [J] Sukima Gothic | <span id="fontSukima"></span>
     </div>
@@ -88,8 +97,8 @@
     <div class="font-display" style="font-family: 'Chiron Hei HK','Last Resort';">
         [H*] Chiron Hei HK | <span id="fontChiron"></span>
     </div>
-    <div class="font-display" style="font-family: 'WenYuan Gothic','Last Resort';">
-        [G] WenYuan Gothic | <span id="fontWenY"></span>
+    <div class="font-display" style="font-family: 'WenYuan Sans SC', 'WenYuan Gothic','Last Resort';">
+        [G] WenYuan Sans | <span id="fontWenY"></span>
     </div>
     <div class="font-display" style="font-family: Yshi-YuanGothic,'Last Resort';">
         [I] Yuu-Gothic | <span id="fontYshi"></span>
@@ -111,7 +120,7 @@
     </div>
     <hr>
     <p>This page is in the public domain. All fonts used are licensed under the OFL. See <a href="https://github.com/FishlandicFishy/cjk-utils">the GitHub repository</a>.</p>
-    <p><a href="https://github.com/orioncactus/pretendard">Pretendard (body font)</a> | <a href="https://github.com/unicode-org/last-resort-font">Last Resort (fallback font)</a> | <a href="https://github.com/adobe-fonts/source-han-sans">Source Han Sans</a> | <a href="https://github.com/MoonlitOwen/ChocolateSans">Chocolate Classical Sans</a> | <a href="https://booth.pm/ja/items/2117070">Sukima Gothic</a> | <a href="https://github.com/TKYKmori/Gothic-Nguyen">Gothic Nguyen</a> | <a href="https://chiron-fonts.github.io/">Chiron Hei HK</a> | <a href="https://github.com/takushun-wu/WenYuanFonts">WenYuan Gothic</a> | <a href="https://github.com/Steve-Yuu/Yuu-Gothic">Yuu-Gothic</a> | <a href="https://github.com/ChiuMing-Neko/ChiuKongGothic">ChiuKong Gothic</a> | <a href="https://github.com/GuiWonder/Shanggu">Shanggu Sans</a> | <a href="https://github.com/MoneMizuno/Genne-Gothic">Genne Gothic</a> | <a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project">Plangothic</a> | <a href="https://github.com/scriptwide-fonts/scriptwide-sans-cjk">Scriptwide Sans</a></p>
+    <p><a href="https://github.com/orioncactus/pretendard">Pretendard <sup>(body font)</sup></a> | <a href="https://github.com/unicode-org/last-resort-font">Last Resort <sup>(fallback font)</sup></a> | <a href="https://github.com/adobe-fonts/source-han-sans">Source Han Sans</a> | <a href="https://github.com/MoonlitOwen/ChocolateSans">Chocolate Classical Sans</a> | <a href="https://github.com/ButTaiwan/genyog-font">GenYoGothic</a> | <a href="https://booth.pm/ja/items/2117070">Sukima Gothic</a> | <a href="https://github.com/TKYKmori/Gothic-Nguyen">Gothic Nguyen</a> | <a href="https://chiron-fonts.github.io/">Chiron Hei HK</a> | <a href="https://github.com/takushun-wu/WenYuanFonts">WenYuan Sans</a> | <a href="https://github.com/Steve-Yuu/Yuu-Gothic">Yuu-Gothic</a> | <a href="https://github.com/ChiuMing-Neko/ChiuKongGothic">ChiuKong Gothic</a> | <a href="https://github.com/GuiWonder/Shanggu">Shanggu Sans</a> | <a href="https://github.com/MoneMizuno/Genne-Gothic">Genne Gothic</a> | <a href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project">Plangothic</a> | <a href="https://github.com/scriptwide-fonts/scriptwide-sans-cjk">Scriptwide Sans</a></p>
     <script>
         const textInput = document.getElementById('textInput');
         const unicodeInput = document.getElementById('unicodeInput');
@@ -123,6 +132,9 @@
         const fontST = document.getElementById('fontST');
         const fontSC = document.getElementById('fontSC');
         const fontChoc = document.getElementById('fontChoc');
+        const fontGenYoTC = document.getElementById('fontGenYoTC');
+        const fontGenYoTW = document.getElementById('fontGenYoTW');
+        const fontGenYoJP = document.getElementById('fontGenYoJP');
         const fontSukima = document.getElementById('fontSukima');
         const fontNguyen = document.getElementById('fontNguyen');
         const fontChiron = document.getElementById('fontChiron');
@@ -145,6 +157,9 @@
             fontST.textContent = inputText;
             fontSC.textContent = inputText;
             fontChoc.textContent = inputText;
+            fontGenYoTC.textContent = inputText;
+            fontGenYoTW.textContent = inputText;
+            fontGenYoJP.textContent = inputText;
             fontSukima.textContent = inputText;
             fontNguyen.textContent = inputText;
             fontChiron.textContent = inputText;
